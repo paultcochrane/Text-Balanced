@@ -1095,16 +1095,16 @@ Text::Balanced - Extract delimited text sequences from strings.
 					'literal',
 				      ]);
 
-# Create a string representing an optimized pattern (a la Friedl)
-# that matches a substring delimited by any of the specified characters
-# (in this case: any type of quote or a slash)
+ # Create a string representing an optimized pattern (a la Friedl)
+ # that matches a substring delimited by any of the specified characters
+ # (in this case: any type of quote or a slash)
 
 	$patstring = gen_delimited_pat(q{'"`/});
 
-# Generate a reference to an anonymous sub that is just like extract_tagged
-# but pre-compiled and optimized for a specific pair of tags, and consequently
-# much faster (i.e. 3 times faster). It uses qr// for better performance on
-# repeated calls, so it only works under Perl 5.005 or later.
+ # Generate a reference to an anonymous sub that is just like extract_tagged
+ # but pre-compiled and optimized for a specific pair of tags, and consequently
+ # much faster (i.e. 3 times faster). It uses qr// for better performance on
+ # repeated calls, so it only works under Perl 5.005 or later.
 
 	$extract_head = gen_extract_tagged('<HEAD>','</HEAD>');
 
